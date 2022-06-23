@@ -1,19 +1,34 @@
 {
-  "files":[
-    {
-      "id":"",
-      "name": "",
-      "url": ""
-    },
-    {
-      "id":"",
-      "name": "",
-      "url": ""
-    },
-    {
-      "id":"",
-      "name": "",
-      "url": ""
-    }
-  ]
+  "courses":{
+          "1":"3303-413 Practical",
+          "2":"Bacteriology II",
+          "3":"Bacteriology I Text Book",
+          "4":"FOOD MICROBIOLOGY",
+          "5":"General Microbiology (3303-211) (1)",
+          "6":"physiology of fungi",
+          "8":"Practical Bacteriology II",
+          "9":"Practical Cell Biology",
+          "10":"Practical FOOD MICROBIOLOGY course ",
+          "11":"practical General Microbiology",
+          "12":"Pratical Bacteriology I",
+          "13":"PRINCIPLES OF GENETICS final 2020-1441",
+          "14":"Reading Course-قراءات",
+          "15":"بيولوجية الخلية",
+          "16":"صناعية نظري",
+          "17":"صناعيه عملي",
+          "18":"موفولوجي وتشريح نهائي"
+  },
+  "researches":{
+    "1":"A Nanoinformatics Approach to Evaluate the Pharmacological Properties of Nanoparticles for the Treatment of Alzheimer’s Disease",
+    "2":"animals-10-02234-v2 (2)",
+    "3":"Assessment of the Antileishmanial Potential of Cassia fistula Leaf Extract",
+    "4":"Camelus",
+    "5":"Combined Supplementation of Nano-Zinc Oxide and Thyme Oil Improves the Nutrient Digestibility and Reproductive Fertility in the Male Californian Rabbits",
+    "6":"Cynaroside inhibits Leishmania donovani UDP-galactopyranose mutase and induces reactive oxygen species to exert antileishmanial response",
+    "7":"Molecular detection and risk factors for Anaplasma platys infection in dogs from Egypt",
+    "8":"Nanoparticles- Synthesis and Their Role as Potential Drug Candidates for the Treatment of Parasitic Diseases",
+    "9":"Phytochemical analysis of Acacia nilotica and evaluation of its antileishmanial potential",
+    "10":"Transfer_of_Copyright_Agreement_Form",
+    "11":"viruses-13-02167"
+  }
 }

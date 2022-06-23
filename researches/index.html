@@ -45,7 +45,7 @@
     <div class="row p-2 border-bottom border-4 border-dark">
       <h1 class="col-md-12 text-center">الأبحاث العلمية</h1>
     </div>
-    <div class="row" id="researches-container" style="background: rgba(255,255, 255, .8)">
+    <div class="row pt-3" id="researches-container" style="background: rgba(255,255, 255, .8)">
 
 
 
@@ -65,29 +65,29 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
   <script src="../js/main.js"></script>
   <script>
-    fetch("./researches.json")
+    fetch("../data/files.json")
   .then(function(res){ return res.json(); })
   .then(function(data){
     //console.log(data)
 
     var htmlContent=``;
-    Object.keys(data).map(function(key, index) {
-    var value = data[key];
+    Object.keys(data.researches).map(function(key, index) {
+    var value = data.researches[key];
 
     htmlContent+=`
-    <div class="col-12 mt-5">
-        <div class="row course-info bg-light shadow rounded p-3">
-          <div class="col-8">
+    <div class="col-12 my-1">
+        <div class="row course-info bg-light shadow rounded p-3 m-2">
+          <div class="col-8 d-flex align-items-center">
               <div>
-                ${value} 
+                ${value}
               </div>
           </div>
           <div class="col-4">
-            <div>
-              <div class="btns-container">
-                <a href="./show.html?id=${key}" class="btn btn-clrfl m-2" >عرض <img src="../images/pdf-icon.jpg" width="30px" height="30px" alt=""></a>
+            <div class="">
+              <div class="btns-container d-flex justify-content-end">
+                <a href="../show/index.html?type=researches&&id=${key}" class="btn btn-clrfl m-2" >عرض <img src="../images/pdf-icon.jpg" width="30px" height="30px" alt=""></a>
                 <a href="../files/researches/${value}.pdf" class="btn btn-clrfl m-2" download>تحميل<img src="../images/pdf-icon.jpg" width="30px" height="30px" alt=""></a></a>
-              </div> 
+              </div>
             </div>
           </div>
         </div>
