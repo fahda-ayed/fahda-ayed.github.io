@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>فهده عايد - المقررات الدراسية</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <link rel="stylesheet" href="../style/main.css">
+</head>
+<body>
+
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a name="" class="navbar-brand" href="#">فهده عايد</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse " id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="../">الرئيسية</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#">المقررات الدراسية</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../researches">الأبحاث العلمية</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="row p-2 border-bottom border-4 border-dark">
+      <h1 class="col-md-12 text-center">المقررات الدراسية</h1>
+    </div>
+    <div class="row mt-5" id="courses-container" style="background: rgba(255,255, 255, .8)">
+
+     
+
+
+    </div>
+  </div>
+  <footer class="mt-3 m-0">
+    <p class="bg-secondary p-3 text-center h5 m-0 text-light">
+      جميع الحقوق محفوظة&copy;2022
+    </p>
+  </footer>
+
+  <div id="loader" class="loader">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  <script src="../js/main.js"></script>
+  <script>
+    fetch("./courses.json")
+  .then(function(res){ return res.json(); })
+  .then(function(data){
+    //console.log(data)
+
+    var htmlContent=``;
+    Object.keys(data).map(function(key, index) {
+    var value = data[key];
+
+    htmlContent+=`
+    <div class="col-12 mt-5">
+        <div class="row course-info bg-light shadow rounded p-3">
+          <div class="col-8">
+              <div>
+                ${value} 
+              </div>
+          </div>
+          <div class="col-4">
+            <div>
+              <div class="btns-container">
+                <a href="./show.html?id=${key}" class="btn btn-clrfl m-2" >عرض <img src="../images/pdf-icon.jpg" width="30px" height="30px" alt=""></a>
+                <a href="../files/courses/${value}.pdf" class="btn btn-clrfl m-2" download>تحميل<img src="../images/pdf-icon.jpg" width="30px" height="30px" alt=""></a></a>
+              </div> 
+            </div>
+          </div>
+        </div>
+      </div>
+    `
+
+  });
+
+  var coursesContainer = document.getElementById("courses-container");
+  coursesContainer.innerHTML=htmlContent
+
+  })
+  </script>
+</body>
+</html>

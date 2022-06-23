@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body  style="padding: 0;margin: 0;overflow: hidden;">
+    <a style="margin: 30px;" href="../courses/">عودة</a><br>
+    <iframe style="border:0px #ffffff none;height: 100vh;width: 100vw;" width="100%" ></iframe>
+</body>
+<script>
+
+var url_string = window.location.href
+var url = new URL(url_string);
+var id = url.searchParams.get("id");
+
+var FileName =  getFileName(id);
+console.log(FileName)
+
+
+function getFileName(id){
+    fetch("./courses.json")
+  .then(function(res){ return res.json(); })
+  .then(function(data){
+    
+    Object.keys(data).map(function(key, index) {
+        if(key == id){
+            var fileName = data[key];
+            document.querySelector('iframe').setAttribute('src',`../files/courses/${fileName}.pdf`);
+            return false;
+        }
+    
+
+  });
+
+
+
+
+
+  })
+
+}
+    
+  </script>
+</html>
+
