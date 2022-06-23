@@ -8,7 +8,7 @@ if(id && type !="CV"){
   .then(res => res.json())
   .then(data=>{
     document.querySelector('#file-name').textContent = data[type][id];
-    document.querySelector('iframe').setAttribute('src',`../files/${type}/${data[type][id]}.pdf`);
+    document.querySelector('iframe').setAttribute('src',`https://fahda-ayed.github.io/files/${type}/${data[type][id]}.pdf`);
     document.querySelector('iframe').addEventListener('load', ()=>{
       document.querySelector('#loader').style.display = 'none';
       document.body.style.overflow = 'auto';
@@ -16,7 +16,7 @@ if(id && type !="CV"){
   });
 } else if(type.toLowerCase() == "cv"){
   document.querySelector('#file-name').textContent = "السيرة الذاتية";
-  document.querySelector('iframe').setAttribute('src',`../files/فهدة عايد CV.pdf`);
+  document.querySelector('iframe').setAttribute('src',`https://fahda-ayed.github.io/files/فهدة عايد CV.pdf`);
   document.querySelector('#loader').style.display = 'none';
   document.body.style.overflow = 'auto';
 }
