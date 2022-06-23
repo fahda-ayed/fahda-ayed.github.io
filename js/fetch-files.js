@@ -16,7 +16,7 @@ if(id && type !="CV"){
   });
 } else if(type.toLowerCase() == "cv"){
   document.querySelector('#file-name').textContent = "السيرة الذاتية";
-  document.querySelector('iframe').setAttribute('src',`../files/فهدة عابد CV.pdf`);
+  document.querySelector('iframe').setAttribute('src',`../files/فهدة عايد CV.pdf`);
   document.querySelector('#loader').style.display = 'none';
   document.body.style.overflow = 'auto';
 }
